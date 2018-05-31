@@ -1,0 +1,28 @@
+.dm{
+  text-align:center;
+}
+.wall{
+  border: 1px solid #ccc;
+  width:90%;
+  height:500px;
+  margin:10px auto;
+  position:relative;
+  overflow:hidden;
+}
+.text{
+  width:400px;
+  height:40px;
+  border-radius:2px;
+  border:1px solid #ccc;
+}
+
+.btn-send{
+  width:100px;
+}
+.btn-clear{
+  width:100px;
+}
+
+span{
+  position: absolute;
+}
