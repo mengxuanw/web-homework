@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="quote-text">
+    <i class="fa fa-quote-left"></i><span id="text"></span>
+  </div>
+  <div class="quote-author">
+    -<span id="author"></span>
+  </div>
+  <div class="buttons">
+    <button class="btn button" id="tweet-quote"><i class="btn fa fa-twitter" title="twitter"></i></button>
+    <button class="btn button" id="weibo-quote"><i class="btn fa fa-weibo" title="weibo"></i></button>
+    <button class="btn button" id="quote-btn">New quote</button>
+  </div>
+</div>
+<div class="editor"> by <a href="http://www.qinsent.com/">Molly</a></div>
