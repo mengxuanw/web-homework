@@ -1,0 +1,28 @@
+.logo{
+    width: 100px;
+    height: auto;
+    margin: 20px auto;
+}
+
+img{
+    width: 100px;
+    height: auto;
+}
+
+.searchresult{
+    display: none;
+    border:1px solid #4cc;
+}
+
+.rand{ 
+    text-align: center;
+}
+
+.rand a{
+    font-size:30px;
+}
+
+.form{
+    width:80%;
+    margin: 0 auto;
+}
