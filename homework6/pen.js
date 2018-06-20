@@ -4,6 +4,7 @@ $(document).ready(function(){
         if(word == ""){
             $(".word").focus();
         }
+        
         else{
             var url = "https://en.wikipedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=0&gsrlimit-10&prop=pageimages|extracts&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max&origin=*&gsrsearch=";
            $.ajax({
