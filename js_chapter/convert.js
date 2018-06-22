@@ -1,7 +1,7 @@
 function convert(num) {
   var arr = [];
   var value = 0;
-  var t = 1;
+  var t = 0;
   while(num > 0){
     value = num % 10;
     if(value !== 0)
@@ -21,19 +21,6 @@ function numToRoman(val) {
               ['C','CC','CCC','CD','D','DC','DCC','DCCC','CM'],
               ['M','MM','MMM']];
   var str = "";
-  if(val[1] == 1){
-    str = roman[0][val[0]-1];
-  }
-  else if(val[1] == 2){
-    str = roman[1][val[0]-1];
-  }
-  else if(val[1] == 3){
-    str = roman[2][val[0]-1];
-  }
-  else{
-    str = roman[3][val[0]-1];
-  }
+  str = roman[val[1]][val[0]-1];
   return str;
 }
-
-convert(36);
