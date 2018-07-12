@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"> 
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">  
+    <link rel = "stylesheet" href="style.css">
+	<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script> 
+    <script src="pen.js"></script>
+</head>
+<body>
+    <div class="container" ng-app="myApp" ng-controller="myCtrl">
+       <h1><b>FreeCodeCamp</b></h1> 
+       <div class="break">
+           <h2>BREAK LENGTH</h2>
+           <button class="minus" ng-click="breakLengthChange(-1)">-</button>
+           <span>{{breakLength}}</span>
+           <button class="plus" ng-click="breakLengthChange(1)">+</button>
+       </div>
+       <div class="session">
+           <h2>SESSION LENGTH</h2>
+           <button class="minus" ng-click="sessionLengthChange(-1)">-</button>
+           <span>{{sessionLength}}</span>
+           <button class="plus" ng-click="sessionLengthChange(1)">+</button>
+       </div>
+       <div class="timer" ng-click="toggleTimer()">  
+           <p>{{session}}</p>
+           <p>{{timeLeft}}</p>
+           <span class="fill" ng-style="{'height':fillHeight,'background':fillColor}"></span>
+       </div>
+    </div>
+</body>
+</html>
