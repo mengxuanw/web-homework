@@ -1,5 +1,3 @@
-import { randomBytes } from 'crypto';
-
 var React = require('react')
 var ReactDOM = require('react-dom')
 
@@ -40,13 +38,21 @@ class Board extends React.Component{
         //为组件自定义方法绑定this到组件实例，很重要
         this.handleKeyDown = this.handleKeyDown.bind(this)
         this.state = {
-           cells: initCells(),
+            score: 0,
+            cells: initCells(),
         }
     }
     componentDidMount(){
         window.addEventListener('keydown', this.handleKeyDown)
     }
-
+    gameover(){
+        var score = this.state.score
+        score ++
+        this.setState({
+            score: score 
+        })
+        this.props.updateScore(this.state.score)
+    }
     moveLeft(){
         var cells = this.state.cells.slice()
         if(!canMoveLeft(cells))
@@ -75,6 +81,7 @@ class Board extends React.Component{
         })
         return true
     }
+
     handleKeyDown(e){
         var keyCode = e.which || e.keyCode
         switch(keyCode){
@@ -84,7 +91,7 @@ class Board extends React.Component{
                 this.moveLeft()
                 break
             case 38:
-                alert(2)
+                this.gameover()
                 break
             case 39:
                 alert(3)
@@ -149,14 +156,24 @@ class Board extends React.Component{
 }
 
 class Game extends React.Component{
-    render(){
-        const score = 0
+    constructor(props){
+        super(props)
+        this.state = {
+            highest_score: 0
+        }
+    }
+    updateScore(score){
+        this.setState({
+            highest_score: score
+        })
+    }
+    render(){     
         return (
             <div>
                 <header>
-                    <p>{score}</p>
+                    <p>{this.state.highest_score}</p>
                 </header>
-                <Board />
+                <Board updateScore={this.updateScore.bind(this)}/>
             </div>
         )
     }
